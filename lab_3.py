@@ -1,5 +1,5 @@
 def main():  
-    real_value = float(input("Enter a real value"))
+    real_value = float(input("Enter a real value "))
 
     # Absolute value
     if real_value < 0:
