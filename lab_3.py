@@ -1,5 +1,5 @@
 def main():  
-    real_value = -3.456#float(input("Enter a real value"))
+    real_value = float(input("Enter a real value"))
     if real_value < 0:
         absolute_value = -int(real_value)
         floor_value = int(real_value) -1
