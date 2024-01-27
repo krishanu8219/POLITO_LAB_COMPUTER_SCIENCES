@@ -10,7 +10,10 @@ def count_neighbours(grid, row, column):
     return neighbours
 
 def update_grid(grid):
-    grid_c = grid.copy()
+    grid_c = []
+    for row in grid:
+        row_copy = row[:]
+        grid_c.append(row_copy)
     for i in range(len(grid)):
         for j in range(len(grid[0])):
             if grid[i][j] == 1 and count_neighbours(grid, i, j) < 2:
