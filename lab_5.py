@@ -1,7 +1,7 @@
 def main():
     word_list = []
-    total_vowels = 0
-    total_consonants = 0
+    total_vowels_list = []
+    total_consonants_list = []
 
     while True:
         word = input("Input a sequence of words, one at a time (to stop, enter an empty string): ")
@@ -10,11 +10,15 @@ def main():
         word_list.append(word)
 
         vowels = "aeiouAEIOU"
+        total_vowels = 0
+        total_consonants = 0
         for char in word:
             if char in vowels:
                 total_vowels += 1
             elif char.lower() in "bcdfghjklmnpqrstvwxyz":
                 total_consonants += 1
+        total_vowels_list.append(total_vowels)
+        total_consonants_list.append(total_consonants)
 
     if not word_list:
         print("No words entered.")
@@ -29,8 +33,8 @@ def main():
     last_word = max(word_list, key=str.lower)
 
     average_word_length = total_word_length / word_count if word_count else 0
-    average_vowels = total_vowels / word_count if word_count else 0
-    average_consonants = total_consonants / word_count if word_count else 0
+    average_vowels = sum(total_vowels_list) / word_count if word_count else 0
+    average_consonants = sum(total_consonants_list) / word_count if word_count else 0
 
     print(f"Longest word: {longest_word}, Shortest word: {shortest_word}")
     print(f"Number of words: {word_count}")
@@ -40,3 +44,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

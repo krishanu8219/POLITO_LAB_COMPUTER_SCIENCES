@@ -32,10 +32,17 @@ def main():
         else:
             round_value = int(real_value)
     else:
-        if (real_value - int(real_value)) <= -0.5:
+        # Implementing absolute value manually for the fractional part
+        fractional_part = real_value - int(real_value)
+        if fractional_part < 0:
+            fractional_part = -fractional_part
+
+        if fractional_part >= 0.5:
             round_value = int(real_value) - 1
         else:
-            round_value = int(real_value)        
+            round_value = int(real_value)
+
+            
 
     print(f"Absolute value is {absolute_value} \nFloor Value is {floor_value} \nCeiling Value is {ceiling_value} \nRound Value is {round_value} ")
 
